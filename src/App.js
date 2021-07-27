@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { Switch, Route, Router } from 'react-router-dom';
+import history from './history';
 
 import Home from './pages/Home/Home';
 import Series from './pages/Series/Series';
@@ -10,7 +11,7 @@ import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <Router history={history}>
       <Header />
       <Switch>
         <Route path="/" exact component={Home} />
@@ -18,7 +19,7 @@ const App = () => {
         <Route path="/movies" exact component={Movies} />
       </Switch>
       <Footer />
-   </BrowserRouter>
+   </Router>
   );
 }
 
