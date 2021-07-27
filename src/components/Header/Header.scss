@@ -1,0 +1,55 @@
+@import "../../sass/base/variables";
+
+.header {
+  &-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-blue;
+    padding: 2rem 8rem;
+  }
+
+  &-secondary {
+    background-color: $color-orange;
+    padding: 1rem 8rem;
+
+    h1 {
+      font-size: 3rem;
+    }
+  }
+
+  &__logo {
+    font-size: 3.7rem;
+    font-weight: 300;
+
+    span {
+      margin-right: 0.5rem;
+      font-weight: bold;
+    }
+  }
+
+  &__buttons {
+    &-login,
+    &-trial {
+      text-decoration: none;
+      color: $color-white;
+      font-size: 2rem;
+    }
+
+    &-login {
+      margin-right: 1.5rem;
+    }
+
+    &-trial {
+      background-color: $color-red-dark;
+      padding: 1rem;
+      border-radius: 3px;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        color: $color-blue;
+        background-color: $color-dark;
+      }
+    }
+  }
+}
