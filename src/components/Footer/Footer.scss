@@ -1,0 +1,51 @@
+@import "../../sass/base/variables";
+
+.footer {
+  padding: 2rem 15rem;
+  background-color: $color-orange;
+  &__links {
+    a {
+      color: $color-white;
+      text-decoration: none;
+      padding-right: 1rem;
+
+      &:not(:last-child) {
+        border-right: 1px solid $color-white;
+      }
+
+      &:not(:first-child) {
+        padding-left: 1rem;
+      }
+
+      &:hover {
+        color: $color-blue;
+      }
+    }
+  }
+
+  &__copy {
+    font-size: 1.6rem;
+    margin: 2rem 0;
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+
+    &-social {
+      img {
+        height: 2rem;
+        width: auto;
+      }
+    }
+
+    &-store {
+      img {
+        height: 4rem;
+        width: auto;
+      }
+    }
+  }
+}
