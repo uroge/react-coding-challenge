@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Header.scss';
+import history from '../../history';
 
 const Header = (props) => {
-    console.log(props);
+    const [headerTitle, setHeaderTitle] = useState('Popular Titles');
+    
+    useEffect(() => {
+        if(history.location.pathname === '/series') {
+            setHeaderTitle('Popular series');
+        } else if (history.location.pathname === '/movies') {
+            setHeaderTitle('Popular movies');
+        }
+    }, []);
+    
     return (
         <div className="header">
             <div className="header-main">
@@ -16,7 +26,7 @@ const Header = (props) => {
                 </div>
             </div>
             <div className="header-secondary">
-                <h1>Popular Titles</h1>
+                <h1>{headerTitle}</h1>
             </div>
         </div>
     );
