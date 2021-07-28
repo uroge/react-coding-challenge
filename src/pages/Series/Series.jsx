@@ -5,11 +5,7 @@ import axios from '../../axios/axios';
 
 const Series = () => {
     useEffect(() => {
-        axios.get('sample.json')
-        .then(response => {
-            console.log(response.data)
-        })
-        .catch(error => console.log(error));
+        
     }, []);
 
     return (
