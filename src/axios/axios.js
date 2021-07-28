@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-    baseURL: '../../feed/sample.json'
+    baseURL: '../../feed/'
 });
 
 export default axiosInstance;
