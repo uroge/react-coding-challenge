@@ -15,7 +15,6 @@ export const fetchSeries = () => {
         .then(response => {
             const moviesAndSeries = [...response.data.entries];
             const series = moviesAndSeries.filter(serie => serie.programType === 'series' && serie.releaseYear >= 2010);
-            console.log('Series: ', series)
             dispatch(getSeries(series.slice(0, 21)));
         })
         .catch(error => console.log(error));
@@ -34,8 +33,9 @@ export const fetchMovies = () => {
     return dispatch => {
         axios.get('sample.json')
         .then(response => {
-            console.log(response.data);
-            // dispatch(getMovies(response.data));
+            const moviesAndSeries = [...response.data.entries];
+            const movies = moviesAndSeries.filter(movie => movie.programType === 'movie' && movie.releaseYear >= 2010 && !movie.title.includes( 'The Hunger Games'));
+            dispatch(getMovies(movies.slice(0, 21)));
         })
         .catch(error => console.log(error));
     }
