@@ -1,20 +1,23 @@
 import React, { useEffect } from 'react';
 import './Series.scss';
 
-import axios from '../../axios/axios';
 import { fetchSeries } from '../../store/actions/actions'; 
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import CardContainer from '../../components/CardContainer/CardContainer';
 
 const Series = () => {
+    const series = useSelector(state => state.series);
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(fetchSeries());
-    }, []);
+    }, [dispatch]);
 
     return (
-        <h1>Series</h1>
+        <div className="series">
+            <CardContainer cards={series}/>
+        </div>
     );
 }
 

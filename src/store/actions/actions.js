@@ -13,10 +13,9 @@ export const fetchSeries = () => {
     return dispatch => {
         axios.get('sample.json')
         .then(response => {
-            console.log(response.data.entries);
             const moviesAndSeries = [...response.data.entries];
             const series = moviesAndSeries.filter(serie => serie.programType === 'series' && serie.releaseYear >= 2010);
-            console.log('Series: ', series);
+            console.log('Series: ', series)
             dispatch(getSeries(series.slice(0, 21)));
         })
         .catch(error => console.log(error));
